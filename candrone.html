@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canadore College App</title>
+    <!-- Add Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Lato:wght@300;400&family=Montserrat:wght@500;700&family=Open+Sans&family=Playfair+Display&family=Raleway:wght@700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="candrone.css">
+    <link rel="stylesheet" href="infopannel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="phone-container">
+        <!-- Main App View -->
+        <div id="main-view">
+            <div class="app-content">
+                <div class="header">
+                    <div class="thumb-icon">
+                        <img src="/thumb.png" alt="Canadore College Logo" class="thumb-logo">
+                    </div>
+                    <div class="settings-icon">
+                        <img src="setting.jpg" alt="Canadore College Logo" class="thumb-logo">
+
+                    </div>
+                </div>
+
+                <div class="logo-container">
+                    <img src="/candrone.png" alt="Canadore College Logo" class="logo">
+                </div>
+
+                <div class="id-card-button" id="view-id-card-btn">
+                    <div class="id-card-icon">
+                        <img src="/icon1.png" alt="Canadore College Logo" class="logo-man">
+
+                    </div>
+                    <div class="id-card-text">View ID card</div>
+                    <div class="chevron">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <div class="section announcements">
+                    <h2 class="section-header">Announcements</h2>
+                    <div class="section-content">
+                        <p class="empty-message">There are no announcements at this time.</p>
+                    </div>
+                </div>
+
+                <div class="section resources">
+                    <h2 class="section-header">Resources</h2>
+                    <div class="section-content">
+                        <p class="empty-message">There are no available resources at this time.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="home-indicator"></div>
+        </div>
+
+        <!-- ID Card View -->
+        <div id="id-card-view" class="hidden">
+            <div class="id-card-header">
+                <div class="back-button" id="back-to-main">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="id-card-title">My ID card</div>
+                <div class="menu-button">
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </div>
+
+            <div class="id-card-content">
+                <div class="id-card-logo-container">
+                    <img src="./candrone.png" alt="Canadore College Logo" class="id-card-logo">
+                </div>
+
+                <div class="info-button strong-blink">
+                    <spam class="info-letter">i</ispam>
+                </div>
+
+                <div class="id-photo-container">
+                    <div class="id-photo">
+                        <img src="pp..jpg" alt="Student Photo" class="student-photo">
+                    </div>
+                </div>
+
+                <div class="student-info">
+                    <div class="student-name">Sanish Moktan</div>
+                    <div class="barcode-container">
+                        <img src="/barcode.png" alt="Barcode" class="barcode">
+                    </div>
+                    <div class="student-id">A00173807</div>
+                </div>
+
+                <div class="transit-info">
+                    <div class="transit-logo">
+                        <img src="/bishal.png" alt="North Bay Transit Logo" class="transit-logo-img">
+                    </div>
+                    <div class="transit-year">2024 - 2025</div>
+                </div>
+            </div>
+
+            <!-- Info Panel Overlay -->
+            <div id="info-panel" class="info-panel">
+
+                <div class="info-panel-header">
+                    <div class="back-button-info" id="close-info-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    <div class="info-panel-title">My ID card</div>
+                    <div class="menu-button-info">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                </div>
+
+                <div class="info-icon-circle">
+                    <i class="fas fa-info"></i>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-section">
+                        <div class="info-section-title">Issued By</div>
+                        <div class="info-content">Canadore College</div>
+                    </div>
+
+                    <div class="info-section">
+                        <div class="info-section-title">Digital ID Validity Period</div>
+                        <div class="info-row">
+                            <div class="info-label">Issued on</div>
+                            <div class="info-value">Apr 30, 2025, 10:31am</div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label">Downloaded</div>
+                            <div class="info-value">May 14, 2025, 11:54pm</div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label">Refreshes on</div>
+                            <div class="info-value">May 21, 2025, 11:54pm</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="home-indicator"></div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

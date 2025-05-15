@@ -1,0 +1,664 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  font-family: "Roboto", sans-serif;
+}
+
+.thumb-logo {
+  width: 50px;
+  height: 50px;
+}
+
+.phone-container {
+  position: relative;
+  width: 100%;
+  max-width: 390px;
+  height: 844px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Status Bar */
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  height: 44px;
+  position: relative;
+  font-family: "Roboto", sans-serif;
+}
+
+.time {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.black-notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 30px;
+  background-color: black;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+}
+
+.status-icons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.signal {
+  display: flex;
+  align-items: flex-end;
+  height: 12px;
+}
+
+.signal-bar {
+  width: 3px;
+  height: 100%;
+  background-color: black;
+  margin-right: 1px;
+}
+
+.signal-bar:nth-child(1) {
+  height: 25%;
+}
+
+.signal-bar:nth-child(2) {
+  height: 50%;
+}
+
+.signal-bar:nth-child(3) {
+  height: 75%;
+}
+
+.signal-bar:nth-child(4) {
+  height: 100%;
+}
+
+.signal-bar.empty {
+  background-color: #d1d1d6;
+}
+
+.wifi {
+  font-size: 14px;
+}
+
+.battery {
+  display: flex;
+  align-items: center;
+}
+
+.battery.yellow {
+  display: flex;
+  align-items: center;
+  background-color: #ffd60a;
+  border-radius: 14px;
+  padding: 2px 6px;
+}
+
+.battery-percentage {
+  font-size: 12px;
+  font-weight: bold;
+  margin-right: 2px;
+}
+
+.battery-icon {
+  width: 24px;
+  height: 12px;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 1px;
+  position: relative;
+}
+
+.battery-icon:after {
+  content: "";
+  position: absolute;
+  right: -4px;
+  top: 3px;
+  width: 3px;
+  height: 6px;
+  background-color: black;
+  border-radius: 0 2px 2px 0;
+}
+
+.battery-level {
+  height: 100%;
+  width: 60%;
+  background-color: white;
+}
+
+.battery-level.half {
+  width: 50%;
+  background-color: black;
+}
+
+/* App Content */
+.app-content {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.wave-icon,
+.settings-icon {
+  width: 50px;
+  height: 50px;
+}
+
+/* Logo */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.logo {
+  max-width: 300px;
+  height: auto;
+}
+
+/* Generated Logo (Fallback) */
+.generated-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hexagon-group {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.hexagon {
+  width: 25px;
+  height: 30px;
+  background-color: #d62828;
+  position: relative;
+  margin-right: 2px;
+}
+
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 12.5px solid transparent;
+  border-right: 12.5px solid transparent;
+}
+
+.hexagon:before {
+  top: -10px;
+  border-bottom: 10px solid #d62828;
+}
+
+.hexagon:after {
+  bottom: -10px;
+  border-top: 10px solid #d62828;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.canadore-text {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  letter-spacing: 1px;
+}
+
+.college-text {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  margin-top: -5px;
+}
+
+/* ID Card Button */
+.id-card-button {
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.id-card-button:hover {
+  background-color: #e8e8e8;
+}
+
+.id-card-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+}
+
+.id-card-text {
+  flex-grow: 1;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  color: #1a6e7a;
+}
+
+.chevron {
+  color: #1a6e7a;
+  font-size: 20px;
+}
+
+/* Sections */
+.section {
+  padding-top: 20px;
+  margin-bottom: 20px;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* Updated section header with background */
+.section-header {
+  color: #1a6e7a;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 25px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  padding: 20px 20px;
+  border-radius: 8px;
+}
+
+.section-content {
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.empty-message {
+  color: #888;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+}
+
+/* Home Indicator */
+.home-indicator {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 134px;
+  height: 5px;
+  background-color: black;
+  border-radius: 3px;
+}
+
+/* ID Card View Styles */
+.hidden {
+  display: none;
+}
+
+.slide-in {
+  animation: slideIn 0.3s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.id-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  /* border-bottom: 1px solid #f0f0f0; */
+}
+
+.back-button,
+.menu-button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #1a6e7a;
+  cursor: pointer;
+}
+
+.id-card-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 22px;
+  color: #1a6e7a;
+}
+
+.id-card-content {
+  margin-top: 20px;
+  padding: 20px;
+  position: relative;
+}
+
+
+
+/* Enhanced blinking info button */
+.info-button {
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  width: 55px;
+  height: 55px;
+  border: 2px solid #1a6e7a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a6e7a;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.info-letter {
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+}
+.strong-blink {
+  animation: strong-blink-animation 1.5s infinite;
+  box-shadow: 0 0 10px rgba(26, 110, 122, 0.5);
+}
+
+@keyframes strong-blink-animation {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 5px rgba(26, 110, 122, 0.5);
+  }
+  50% {
+    transform: scale(1.15);
+    box-shadow: 0 0 15px rgba(26, 110, 122, 0.8);
+  }
+}
+
+.id-card-logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.id-card-logo {
+  max-width: 250px;
+  margin-top: 10px;
+  height: auto;
+}
+
+.id-photo-container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 350px;
+  border: 10px solid #d62828;
+  height: 314px;
+}
+
+.id-photo {
+  width: 100%;
+  height: 0;
+  padding-bottom: 75%; /* Creates a rectangular aspect ratio */
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.student-photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.student-info {
+  text-align: center;
+  /* margin-bottom: 30px; */
+}
+
+.student-name {
+  margin-top: 12px;
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  font-weight: 400;
+  /* margin-bottom: 15px; */
+}
+
+.barcode-container {
+  margin: 0 auto;
+  max-width: 300px;
+  /* margin-bottom: 10px; */
+  /* height: 100px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+
+.barcode {
+  width: 100%;
+  height: auto;
+}
+
+/* QR Code Styles */
+.qr-code {
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.qr-code-inner {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 1px;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #ddd;
+}
+
+.qr-module {
+  width: 100%;
+  padding-bottom: 100%; /* Square aspect ratio */
+}
+
+.qr-module.black {
+  background-color: black;
+}
+
+.qr-module.white {
+  background-color: white;
+}
+
+.student-id {
+  font-family: serif;
+  font-weight: 400;
+  font-size: 25px;
+}
+
+/* Fixed transit info alignment */
+.transit-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+
+.transit-logo {
+  max-width: 180px;
+}
+
+.transit-logo-img {
+  width: 100%;
+  height: auto;
+}
+
+.transit-year {
+  font-family: sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  white-space: nowrap;
+  margin-left: 10px;
+}
+
+/* Canadore Logo in ID Card */
+.id-card-logo-container .canadore-logo {
+  display: flex;
+  align-items: center;
+}
+
+.id-card-logo-container .hexagon-group {
+  display: flex;
+  margin-right: 10px;
+}
+
+.id-card-logo-container .hexagon {
+  width: 20px;
+  height: 24px;
+  background-color: #d62828;
+  position: relative;
+  margin-right: 2px;
+}
+
+.id-card-logo-container .hexagon:before,
+.id-card-logo-container .hexagon:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+
+.id-card-logo-container .hexagon:before {
+  top: -8px;
+  border-bottom: 8px solid #d62828;
+}
+
+.id-card-logo-container .hexagon:after {
+  bottom: -8px;
+  border-top: 8px solid #d62828;
+}
+
+.id-card-logo-container .logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.id-card-logo-container .canadore-text {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  letter-spacing: 1px;
+}
+
+.id-card-logo-container .college-text {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  margin-top: -5px;
+}
+
+.logo-man {
+  height: 50px;
+  width: 50px;
+}
+
+/* ID Info Popup Styles */
+#id-info-popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  z-index: 20;
+  transition: opacity 0.3s ease;
+}
+
+.id-info-content {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 2px solid #1a6e7a;
+  border-radius: 15px;
+  padding: 25px 20px;
+}
+
+.info-section-title {
+  color: #1a6e7a;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.info-section-text {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.validity-info {
+  margin-top: 10px;
+}
+
+.validity-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.validity-label {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+}
+
+.validity-value {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+}
+
+/* Fade-in animation for the popup */
+.fade-in {
+  animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
